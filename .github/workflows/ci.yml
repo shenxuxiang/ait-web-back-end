@@ -15,7 +15,7 @@ jobs:
       - name: Echo Time Stamp
         run: |
           echo "server name ${server_name}"
-          echo $(date --date="now +8 hours" +%Y-%m-%d%t%H:%M:%S)
+          echo $(date --date="now +8 hours" +%Y%m%d%t%H:%M:%S)
 
       - name: Checkout Code
         uses: actions/checkout@v3
