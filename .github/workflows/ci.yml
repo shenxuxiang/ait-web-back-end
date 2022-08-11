@@ -45,4 +45,4 @@ jobs:
           PORT: ${{secrets.PORT}}
           USER: ${{secrets.USER}}
           PRIVATE_SSH_KEY: ${{secrets.PRIVATE_SSH_KEY}}
-          COMMAND: tar -xzvf /root/workspace/aitweb-back-end/dist.tar -C /root/workspace/aitweb-back-end
+          COMMAND: tar -xzvf /root/workspace/aitweb-back-end/dist.tar -C /root/workspace/aitweb-back-end; && rm -rf /root/workspace/aitweb-back-end/dist.tar;
