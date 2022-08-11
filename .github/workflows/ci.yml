@@ -1,0 +1,34 @@
+name: CI/CD
+on:
+  push:
+    branches:
+      - dev
+      - release
+      - master
+
+env:
+  server_name: aitweb.cn
+
+jobs:
+  job_one:
+    name: test one
+    runs-on: ubuntu-latest
+    steps:
+      - name: step_one
+        id: step_one
+        run: |
+          echo "server name ${server_name}"
+          "::set-output name=time_stamp::$(echo $(date --date="now +8 hours" +%Y%m%d%H%M%S))"
+
+  job_two:
+    name: test tow
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push'}}
+    steps:
+      - name: step_two
+        id: step_two
+        env:
+          time: ${{ job_one.steps.step_one.output.time_stamp }}
+        run: |
+          echo "time stamp ${time}"
+          echo "server name ${server_name} 2"
