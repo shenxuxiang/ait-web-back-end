@@ -1,0 +1,45 @@
+{
+  "name": "aitweb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "husky install",
+    "start": "npx nodemon ./src/index.js",
+    "lint": "npx eslint --ext .js ./src --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "npx prettier -w ./src",
+      "npm run lint",
+      "git add ."
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@koa/multer": "^3.0.0",
+    "delegates": "^1.0.0",
+    "koa": "^2.13.4",
+    "koa-router": "^12.0.0",
+    "koa-static": "^5.0.0",
+    "mongoose": "^6.5.2",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^2.0.19",
+    "path-to-regexp": "^6.2.1",
+    "statuses": "^2.0.1"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.18.9",
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "eslint": "^8.21.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-alloy": "^4.6.2",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1"
+  }
+}
