@@ -31,9 +31,9 @@ jobs:
     name: test two
     runs-on: ubuntu-latest
     needs: [job_one]
-    if: ${{ env.server_name == 'aitweb.cn'}}
     steps:
       - name: step_two
+        if: ${{ env.server_name == 'aitweb.cn'}}
         env:
           time: ${{ needs.job_one.steps.step_one.outputs.time_stamp }}
         run: |
