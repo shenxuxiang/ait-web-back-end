@@ -23,12 +23,14 @@ jobs:
   job_two:
     name: test tow
     runs-on: ubuntu-latest
+    needs:
+      - job_one
     if: ${{ github.event_name == 'push'}}
     steps:
       - name: step_two
         id: step_two
         env:
-          time: ${{ job_one.steps.step_one.output.time_stamp }}
+          time: ${{ jobs.job_one.steps.step_one.output.time_stamp }}
         run: |
           echo "time stamp ${time}"
           echo "server name ${server_name} 2"
