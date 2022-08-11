@@ -18,7 +18,7 @@ jobs:
         id: step_one
         run: |
           echo "server name ${server_name}"
-          "::set-output name=time_stamp::$(echo $(date --date="now +8 hours" +%Y%m%d%H%M%S))"
+          echo "::set-output name=time_stamp::$(echo $(date --date="now +8 hours" +%Y%m%d%H%M%S))"
 
   job_two:
     name: test tow
