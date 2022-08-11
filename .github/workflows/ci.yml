@@ -39,7 +39,7 @@ jobs:
     if: ${{ startsWith(github.event.head_commit.message, 'build') }}
     steps:
       - name: Sign In Server
-        uses: D3rHase/ssh-command-action@0.2.1
+        uses: D3rHase/ssh-command-action
         with:
           HOST: ${{secrets.HOST}}
           PORT: ${{secrets.PORT}}
