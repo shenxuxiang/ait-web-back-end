@@ -28,7 +28,7 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           port: ${{ secrets.PORT }}
-          user: ${{ secrets.USER }}
+          username: ${{ secrets.USER }}
           password: ${{ secrets.PASSWORD }}
           source: dist.tar
           target: /root/workspace/aitweb-back-end
