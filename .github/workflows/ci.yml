@@ -14,8 +14,7 @@ jobs:
     steps:
       - name: Echo Time Stamp
         run: |
-          echo "server name ${server_name}"
-          echo $(date --date="now +8 hours" +%Y%m%d%t%H:%M:%S)
+          echo $(date --date="now +8 hours" +%Y-%m-%d%t%H:%M:%S)
 
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -33,3 +32,17 @@ jobs:
           source: dist.tar
           target: /root/workspace/aitweb-back-end
 
+  job_two:
+    name: Sign In Remote Server
+    runs-on: ubuntu-latest
+    needs: [job_one]
+    if: ${{ startsWith(github.event.head_commit.message, 'build') }}
+    steps:
+      - name: Sign In Server
+        uses: D3rHase/ssh-command-action@0.2.1
+        with:
+          HOST: ${{secrets.HOST}}
+          PORT: ${{secrets.PORT}}
+          USER: ${{secrets.USER}}
+          PRIVATE_SSH_KEY: ${{secrets.PRIVATE_SSH_KEY}}
+          COMMAND: ${ cd /root/spacework/aitweb-back-end; tar -xzvf dist.tar }
