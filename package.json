@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "prepare": "husky install",
-    "start": "npx nodemon ./src/index.js",
+    "dev": "npx nodemon ./src/index.js",
     "lint": "npx eslint --ext .js ./src --fix",
+    "start:server": "pm2 start pm2.config.js",
+    "reload:server": "pm2 reload 0",
+    "stop:server": "pm2 kill",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "lint-staged": {
@@ -40,6 +43,7 @@
     "eslint-config-alloy": "^4.6.2",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
+    "pm2": "^5.2.0",
     "prettier": "^2.7.1"
   }
 }
