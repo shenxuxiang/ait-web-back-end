@@ -38,7 +38,7 @@
       "context": "授课老师具有丰富的前端工作经验，拥有大厂工作经历。"
     }
   ],
-  "banners": ["https://aitweb.cn/static/images/carousel-1.png", "https://aitweb.cn/static/images/carousel-2.png"],
+  "banners": ["https://aitweb.cn/mini-program/images/carousel-1.png", "https://aitweb.cn/mini-program/images/carousel-2.png"],
   "characteristic": [
     {
       "subtitle": "严格把控招生门槛",
@@ -125,7 +125,7 @@
     }
   ],
   "teacherInfo": {
-    "avatar": "https://aitweb.cn/static/images/teacher-avatar.jpeg",
+    "avatar": "https://aitweb.cn/mini-program/images/teacher-avatar.jpeg",
     "name": "沈老师",
     "introduce": "资深前端开发工程师，7年工作经验，先后就职于趣头条、虎扑体育、上海微盟。"
   },
@@ -133,11 +133,11 @@
   "friendlyTips": "一期只招收30名学员，只需4999元。名额有限赶紧报名吧",
   "shareInfo": {
     "title": "艾特前端课堂",
-    "imageUrl": "https://aitweb.cn/static/images/carousel-1.png",
+    "imageUrl": "https://aitweb.cn/mini-program/images/carousel-1.png",
     "path": "/pages/index/index"
   },
   "contact": {
     "phoneNumber": "18226707203",
-    "qrcode": "https://aitweb.cn/static/images/qrcode.jpeg"
+    "qrcode": "https://aitweb.cn/mini-program/images/qrcode.jpeg"
   }
 }
