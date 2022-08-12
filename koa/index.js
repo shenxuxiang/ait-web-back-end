@@ -1,5 +1,5 @@
 const http = require('http');
-const htps = require('https');
+const https = require('https');
 const EventEmit = require('events');
 const fs = require('fs');
 const path = require('path');
@@ -16,7 +16,7 @@ class Koa extends EventEmit {
     // ssl 表示是否使用 https。
     this.ssl = opts.ssl;
     this.cert = opts.cert;
-    this.key = opts.certKey;
+    this.key = opts.key;
     this.middlewares = [];
     this.context = Object.create(context);
     this.request = Object.create(request);
@@ -44,10 +44,10 @@ class Koa extends EventEmit {
     let server = http.createServer(this.callback());
     if (this.ssl) {
       const options = {
-        key: this.certKey,
+        key: this.key,
         cert: this.cert,
       };
-      server = http.createServer(options, this.callback());
+      server = https.createServer(options, this.callback());
     }
     server.listen(...args);
   }

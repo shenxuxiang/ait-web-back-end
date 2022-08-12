@@ -1,6 +1,6 @@
 const compose = require('../koa-compose');
 const Layer = require('./layer');
-const methods = ['post', 'get', 'head', 'delete', 'put'];
+const methods = ['post', 'get', 'head', 'delete', 'put', 'options'];
 function Router(options) {
   if (!(this instanceof Router)) return new Router(options);
 
