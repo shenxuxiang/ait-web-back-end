@@ -22,6 +22,20 @@ jobs:
       - name: Build Task
         run: tar -czvf dist.tar ./src ./koa* ./http-error ./cookies ./request-body ./package.json ./pm2.config.js
 
+      - name: Sign In Remote Server
+        uses: D3rHase/ssh-command-action@v0.2.1
+        with:
+          HOST: ${{secrets.HOST}}
+          PORT: ${{secrets.PORT}}
+          USER: ${{secrets.USER}}
+          PRIVATE_SSH_KEY: ${{secrets.PRIVATE_SSH_KEY}}
+          # 依次执行多个 command，中间使用分号 “;” 隔开
+          COMMAND: |
+            cd /root/workspace/aitweb-back-end;
+            npm run stop:server;
+            rm -rf dist.tar ./src ./koa* ./http-error ./cookies ./request-body;
+            exit;
+
       - name: Upload Code
         uses: appleboy/scp-action@master
         with:
@@ -32,13 +46,7 @@ jobs:
           source: dist.tar
           target: /root/workspace/aitweb-back-end
 
-  job_two:
-    name: Sign In Remote Server
-    runs-on: ubuntu-latest
-    needs: [job_one]
-    if: ${{ startsWith(github.event.head_commit.message, 'build') }}
-    steps:
-      - name: Uzip File
+      - name: Reload Remote Server
         uses: D3rHase/ssh-command-action@v0.2.1
         with:
           HOST: ${{secrets.HOST}}
@@ -46,4 +54,32 @@ jobs:
           USER: ${{secrets.USER}}
           PRIVATE_SSH_KEY: ${{secrets.PRIVATE_SSH_KEY}}
           # 依次执行多个 command，中间使用分号 “;” 隔开
-          COMMAND: cd /root/workspace/aitweb-back-end; tar -xzvf ./dist.tar; rm -rf ./dist.tar; npm i; npm run stop:server; npm run start:server;
+          COMMAND: |
+            cd /root/workspace/aitweb-back-end;
+            tar -xzvf ./dist.tar;
+            npm i;
+            npm run start:server;
+            exit;
+
+
+  # job_two:
+  #   name: Sign In Remote Server
+  #   runs-on: ubuntu-latest
+  #   needs: [job_one]
+  #   if: ${{ startsWith(github.event.head_commit.message, 'build') }}
+  #   steps:
+  #     - name: Uzip File
+  #       uses: D3rHase/ssh-command-action@v0.2.1
+  #       with:
+  #         HOST: ${{secrets.HOST}}
+  #         PORT: ${{secrets.PORT}}
+  #         USER: ${{secrets.USER}}
+  #         PRIVATE_SSH_KEY: ${{secrets.PRIVATE_SSH_KEY}}
+  #         # 依次执行多个 command，中间使用分号 “;” 隔开
+  #         COMMAND: |
+  #           cd /root/workspace/aitweb-back-end;
+  #           rm -rf dist.tar ./src ./koa* ./http-error ./cookies ./request-body;
+  #           tar -xzvf ./dist.tar;
+  #           npm i;
+  #           npm run stop:server;
+  #           npm run start:server;

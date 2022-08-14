@@ -18,8 +18,12 @@ module.exports.getRequestBody = function getRequestBody(req) {
     });
 
     req.on('end', function() {
-      const buf = Buffer.concat(chunks);
-      return resolve(JSON.parse(buf.toString() || '{}'));
+      try {
+        const buf = Buffer.concat(chunks);
+        return resolve(JSON.parse(buf.toString() || '{}'));
+      } catch (error) {
+        return reject(new Error('参数解析失败'));
+      }
     });
 
     req.on('error', function(err) {

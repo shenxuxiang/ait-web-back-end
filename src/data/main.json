@@ -38,7 +38,10 @@
       "context": "授课老师具有丰富的前端工作经验，拥有大厂工作经历。"
     }
   ],
-  "banners": ["https://aitweb.cn/mini-program/images/carousel-1.png", "https://aitweb.cn/mini-program/images/carousel-2.png"],
+  "banners": [
+    "https://aitweb.cn/mini-program/images/carousel-1.png",
+    "https://aitweb.cn/mini-program/images/carousel-2.png"
+  ],
   "characteristic": [
     {
       "subtitle": "严格把控招生门槛",
