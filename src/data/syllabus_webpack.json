@@ -1,0 +1,68 @@
+{
+  "course": "webpack",
+  "title": "前端工程化",
+  "introduce": "前端工程化课程包含了 NodeJS、Webpack、ESLint、CommitLint 这些内容。NodeJS以及过字前面客车个中学习过了，Webpack 主要负责前端项目脚手架搭建，代码编译，热更新和打包，作为一名合格的前端工程师，必须熟练掌握 Webpack。ESLint 作为前端代码检查的工具，在团队合作中经常用来统一代码风格。CommitLint 用在代码提交到远程仓库时，检查提交的信息是否符合规定格式，这些信息非常有用。",
+  "modules": [
+    {
+      "title": "WebPack",
+      "list": [
+        "初识 Webpack",
+        "context、entry 配置介绍",
+        "output 配置介绍",
+        "resolve 配置介绍",
+        "实现一个简易的打包工具",
+        "Webpack 代码优化配置介绍",
+        "Webpack 模块解析策略",
+        "devServer 开启本地服务器",
+        "Webpack 插件介绍",
+        "DllPlugin、DllRefReferencePlugin 打包优化",
+        "Webpack 其他配置介绍",
+        "Webpack API 介绍",
+        "配置一个完整的 Webpack 实例",
+        "Webpack 工作原理解析",
+        "Webpack 源码讲解",
+        "Webpack 常见的 Louder 及功能讲解",
+        "自定义 Webpack Loader",
+        "Webpack 常见的 Plugin 及功能讲解",
+        "自定义 Webpack Plugin",
+        "Babel 介绍",
+        "Webpack 如何通过 babel 对代码进行编译",
+        "常见的 babel 插件及功能讲解",
+        "Webpack 如何进行代码打包优化",
+        "Webpack 是如何实现 require() 函数的",
+        "Webpack 热更新原理讲解",
+        "Browserslist 的功能和配置讲解",
+        "Webpack 中动态加载模块 dynamic import()",
+        "面试中经常被问的 Webpack 知识点总结"
+      ]
+    },
+    {
+      "title": "ESLint",
+      "list": [
+        "ESLint 配置文件介绍",
+        "ESLint 解析器的种类和功能讲解",
+        "ESLint extends 作用讲解",
+        "ESLint 插件功能讲解",
+        "ESLint parserOptions 配置讲解",
+        "ESLint env 环境变量",
+        "ESLint 全局变量配置",
+        "ESLint rules 配置",
+        "ESLint 启动命令参数介绍",
+        "真实项目中如何配置 ESLint"
+      ]
+    },
+    {
+      "title": "husky && commitlint",
+      "list": [
+        "commitlint 配置文件介绍",
+        "commitlint 规则配置讲解",
+        "husky 介绍",
+        "husky 命令讲解",
+        "lint-staged 功能讲解与使用",
+        "prettier 代码格式化功能讲解",
+        "editorconfig 讲解",
+        "真实项目中如何配置代码检查、commitlint、格式化功能"
+      ]
+    }
+  ]
+}

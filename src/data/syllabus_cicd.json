@@ -1,0 +1,35 @@
+{
+  "course": "cicd",
+  "title": "CI/CD",
+  "introduce": "CI/CD 是持续集成持续发布的简称，通过 CI/CD 即可在代码提交到远程仓库后，自动进行代码打包和发布。避免了人工打包发布的流程，不易出错。增设该课程的目的是帮助学员了解 CI/CD 的原理，以及如何进行 CI/CD 配置。",
+  "modules": [
+    {
+      "title": "YAML语法介绍",
+      "list": [
+        "yml 语法介绍",
+        "yml 对象数据类型",
+        "yml 数组数据类型",
+        "yml 基本数据类型",
+        "yml 复合数据类型",
+        "yml 数据引用",
+        "yml 特殊符号“| >”介绍"
+      ]
+    },
+    {
+      "title": "Git Actions 语法介绍",
+      "list": [
+        "git actions 介绍",
+        "git actions 配置字段讲解",
+        "*、**、+、?等特殊符号的作用",
+        "jobs 任务配置",
+        "如何使用公共的 actions 库",
+        "git actions 中如何访问敏感数据",
+        "git actions 中如何存储敏感数据",
+        "git actions 访问 git 提交信息",
+        "git actions 中如何定义导出变量",
+        "git actions 中如何访问导出变量",
+        "CI/CD 实际案例配置"
+      ]
+    }
+  ]
+}

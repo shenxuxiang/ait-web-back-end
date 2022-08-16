@@ -1,0 +1,71 @@
+{
+  "course": "nodejs",
+  "title": "NodeJS",
+  "introduce": "NodeJS 课程涵盖了 NodeJS、Koa、Mongodb 数据库三个部分。通过 NodeJS 我们将学习如何进行文件处理和压缩、服务器集群管理，同时也为后面的前端工程化课程做基础铺垫。通过 Koa 我们将学习如何对 HTTP 请求和响应进行处理。Mongodb 作为非线性数据库的一种，对数据进行存储。",
+  "modules": [
+    {
+      "title": "NodeJS",
+      "list": [
+        "内置模块path-路径解析",
+        "内置模块url-url解析",
+        "内置模块fs-文件处理",
+        "内置模块stream-流",
+        "内置模块gzip-文件压缩",
+        "内置模块Buffer-缓冲区",
+        "内置模块crypto-加密处理",
+        "内置模块os-操作系统",
+        "内置模块process-nodejs进程",
+        "nodejs定时器模块",
+        "nodejs事件观察者",
+        "commonjs模块介绍",
+        "commonjs模块加载机制",
+        "nodejs 子进程",
+        "nodejs 集群处理",
+        "nodejs 中的异步I/O",
+        "nodejs 中的事件循环",
+        "HTTP 请求-ClientRequest",
+        "HTTP 请求-InComingMessage",
+        "HTTP 请求-Server",
+        "HTTP 请求-ServerResponse",
+        "HTTP 状态码介绍",
+        "搭建一个本地服务器",
+        "npm 包管理器",
+        "package.json 介绍"
+      ]
+    },
+    {
+      "title": "Koa",
+      "list": [
+        "koa 介绍",
+        "koa API 文档介绍",
+        "开始 koa 快速搭建一个简易的本地服务器",
+        "koa-static 静态资源处理",
+        "koa-router 路由设定",
+        "@koa/multer 文件上传",
+        "koa 及 koa 中间件底层原理分析和讲解",
+        "实现一个 koa 库",
+        "实现一个 koa-static",
+        "实现一个 koa-router"
+      ]
+    },
+    {
+      "title": "Mongodb",
+      "list": [
+        "mongodb 数据库介绍、安装",
+        "数据库、集合的创建和删除",
+        "数据插入",
+        "数据查找",
+        "数据更新和删除和排序",
+        "如何使用模糊查找",
+        "数据库索引的创建和删除",
+        "数据如何导入数据库",
+        "mongoose 介绍",
+        "mongoose 之 Schema 介绍",
+        "mongoose 之 model 介绍",
+        "连接 mongodb 数据库",
+        "新增数据、查找数据",
+        "数据删除和更新"
+      ]
+    }
+  ]
+}
