@@ -133,6 +133,7 @@
     "name": "沈老师",
     "introduce": "资深前端开发工程师，7年工作经验，先后就职于趣头条、虎扑体育、上海微盟。"
   },
+  "turnOffCountdown": false,
   "signUpCutOffTime": 1664553599000,
   "friendlyTips": "艾特前端课堂一期招收30名学员，只需4999元。名额有限赶紧报名吧",
   "shareInfo": {

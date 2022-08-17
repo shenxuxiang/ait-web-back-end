@@ -13,6 +13,8 @@ const schemaActiveInfo = new Schema({
   friendlyTips: String,
   shareInfo: Object,
   contact: Object,
+  activityInProgress: Boolean,
+  turnOffCountdown: Boolean,
 });
 
 const schemaCourse = new Schema({

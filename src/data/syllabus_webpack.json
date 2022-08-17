@@ -1,10 +1,10 @@
 {
   "course": "webpack",
   "title": "前端工程化",
-  "introduce": "前端工程化课程包含了 NodeJS、Webpack、ESLint、CommitLint 这些内容。NodeJS以及过字前面客车个中学习过了，Webpack 主要负责前端项目脚手架搭建，代码编译，热更新和打包，作为一名合格的前端工程师，必须熟练掌握 Webpack。ESLint 作为前端代码检查的工具，在团队合作中经常用来统一代码风格。CommitLint 用在代码提交到远程仓库时，检查提交的信息是否符合规定格式，这些信息非常有用。",
+  "introduce": "前端工程化课程包含了 NodeJS、Webpack、ESLint、CommitLint 这些内容。NodeJS 在之前的课程中已经学习过了，Webpack 主要负责前端项目脚手架搭建，配合 babel 完成代码编译，热更新和项目打包。ESLint 作为前端代码检查的工具，在团队合作中经常用来统一代码风格。CommitLint 用在代码提交到远程仓库时，检查提交的信息是否符合规定格式。",
   "modules": [
     {
-      "title": "WebPack",
+      "title": "Webpack",
       "list": [
         "初识 Webpack",
         "context、entry 配置介绍",

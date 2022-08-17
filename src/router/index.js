@@ -25,7 +25,8 @@ router.post('/mini-program/update/active-info', async (ctx) => {
     if (isEmpty(body)) {
       ctx.body = { data: null, code: 9999, msg: '请求参数不能为空' };
       return;
-    } if (!body._id) {
+    }
+    if (!body._id) {
       ctx.body = { data: null, code: 9999, msg: '参数_id不能为空' };
       return;
     }
@@ -48,7 +49,8 @@ router.post('/mini-program/delete/active-info', async (ctx) => {
     if (isEmpty(body)) {
       ctx.body = { data: null, code: 9999, msg: '请求参数不能为空' };
       return;
-    } if (!body._id) {
+    }
+    if (!body._id) {
       ctx.body = { data: null, code: 9999, msg: '参数_id不能为空' };
       return;
     }
@@ -96,7 +98,8 @@ router.post('/mini-program/syllabus', async (ctx) => {
     if (isEmpty(body)) {
       ctx.body = { data: null, code: 9999, msg: '请求参数不能为空' };
       return;
-    } if (!body.course && !body._id) {
+    }
+    if (!body.course && !body._id) {
       ctx.body = { data: null, code: 9999, msg: '缺少必须参数' };
       return;
     }
@@ -122,7 +125,8 @@ router.post('/mini-program/update/syllabus', async (ctx) => {
     if (isEmpty(body)) {
       ctx.body = { data: null, code: 9999, msg: '请求参数不能为空' };
       return;
-    } if (!body._id && !body.course) {
+    }
+    if (!body._id && !body.course) {
       ctx.body = { data: null, code: 9999, msg: '缺少必须参数' };
       return;
     }
@@ -147,7 +151,8 @@ router.post('/mini-program/delete/syllabus', async (ctx) => {
     if (isEmpty(body)) {
       ctx.body = { data: null, code: 9999, msg: '请求参数不能为空' };
       return;
-    } if (!body._id && !body.course) {
+    }
+    if (!body._id && !body.course) {
       ctx.body = { data: null, code: 9999, msg: '缺少必须参数' };
       return;
     }
