@@ -40,8 +40,9 @@
     }
   ],
   "banners": [
-    "https://aitweb.cn/mini-program/images/carousel-1.png",
-    "https://aitweb.cn/mini-program/images/carousel-2.png"
+    "https://aitweb.cn/mini-program/images/banner-1.jpeg",
+    "https://aitweb.cn/mini-program/images/banner-2.jpeg",
+    "https://aitweb.cn/mini-program/images/banner-3.png"
   ],
   "characteristic": [
     {
@@ -138,7 +139,7 @@
   "friendlyTips": "艾特前端课堂一期招收30名学员，只需4999元。名额有限赶紧报名吧",
   "shareInfo": {
     "title": "艾特前端课堂",
-    "imageUrl": "https://aitweb.cn/mini-program/images/carousel-1.png",
+    "imageUrl": "https://aitweb.cn/mini-program/images/wx-share.jpeg",
     "path": "/pages/index/index"
   },
   "contact": {
