@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "prepare": "husky install",
-    "dev": "npx nodemon ./src/index.js",
+    "dev": "cross-env NODE_ENV=development npx nodemon ./src/index.js",
     "lint": "npx eslint --ext .js ./src --fix",
-    "start:server": "pm2 start pm2.config.js",
-    "reload:server": "pm2 reload 0",
+    "start:server": "cross-env NODE_ENV=production pm2 start pm2.config.js",
+    "reload:server": "cross-env NODE_ENV=production pm2 reload 0",
     "stop:server": "pm2 kill",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -38,6 +38,7 @@
     "@babel/eslint-parser": "^7.18.9",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
+    "cross-env": "^7.0.3",
     "eslint": "^8.21.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-alloy": "^4.6.2",

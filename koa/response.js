@@ -103,6 +103,7 @@ module.exports = {
     this._body = value;
     if (value == null) {
       if (!statuses.empty[this.status]) this.status = 204;
+      this._explicitNullBody = true;
       this.remove('Content-Length');
       this.remove('Content-Type');
       this.remove('Transfer-Encoding');
@@ -110,6 +111,8 @@ module.exports = {
     }
 
     // _explicitStatus 表示 status 是否已经被设置。
+    // 当业务逻辑中已经设置了 status，那么在这里就不能重复设置了。
+    // 例如使用 ctx.redirect() 重定向。
     if (!this._explicitStatus) this.status = 200;
 
     const hasType = this.has('Content-Type');

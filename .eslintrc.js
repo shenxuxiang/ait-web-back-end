@@ -27,6 +27,7 @@ module.exports = {
     'consistent-return': [0],
     'no-underscore-dangle': [0],
     'max-len': [2, 120],
+    'no-plusplus': [0],
   },
   settings: {
     // 添加该配置是为了解决每次运行 lint 检查后，

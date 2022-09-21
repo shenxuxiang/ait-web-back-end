@@ -1,8 +1,10 @@
 const path = require('path');
 const fs = require('fs');
 const Koa = require('../koa');
+const Router = require('../koa-router');
 const fileSystem = require('../koa-static');
-const router = require('./router');
+const miniRouter = require('./router/mini-program');
+const centerRouter = require('./router/center');
 const { ActiveInfoModel, CourseModel } = require('./mongodb');
 
 const options = {
@@ -15,7 +17,8 @@ app.context.db = {
   ActiveInfoModel,
   CourseModel,
 };
-
+const router = new Router();
+router.use(miniRouter.routes(), centerRouter.routes());
 app.use(fileSystem(path.resolve('static')));
 app.use(router.routes());
 

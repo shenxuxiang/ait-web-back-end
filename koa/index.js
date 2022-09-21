@@ -83,6 +83,7 @@ class Koa extends EventEmit {
     if (err.expose || status === 404) return;
     const msg = err.stack || err.toString();
     console.log('=================== log ======================');
+    // 在每一行的开头都加上三个空格，这样可以和其他的日志输出有所区别。
     console.error(msg.replace(/^/gm, '   '));
     console.log('==============================================');
   }
@@ -99,8 +100,10 @@ function respond(ctx) {
 
   // 如果请求方法是 HEAD。则只返回响应头信息。
   if (ctx.method === 'HEAD') {
-    if (!ctx.res.headersSend && !ctx.response.length) {
+    // 响应还未发出，且 response header 中没有 Content-Length
+    if (!ctx.res.headersSend && !ctx.response.has('Content-Length')) {
       const length = ctx.response.length;
+      // 如果 length 是一个数值类型，则说明是需要返回 Content-Length 的。除非 body 是一个 Stream。
       if (typeof length === 'number') ctx.length = length;
     }
     return ctx.res.end(null);
@@ -108,6 +111,12 @@ function respond(ctx) {
 
   // 如果 body 是 null。则说明此时 status 是 404。
   if (ctx.body == null) {
+    // _explicitNullBody === true，表示是业务逻辑不需要返回任何内容。
+    if (ctx.response._explicitNullBody) {
+      ctx.remove('Content-Type');
+      ctx.remove('Content-Length');
+      return ctx.res.end();
+    }
     const msg = statuses(ctx.status);
     ctx.type = 'text/plain';
     ctx.length = Buffer.byteLength(msg);

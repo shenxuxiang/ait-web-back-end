@@ -1,3 +1,8 @@
+/**
+ * 数据库操作失败，统一返回 status 200 code 4999
+ * 请求参数为空，统一返回 status 200 code 9999
+ * 请求参数获取失败，status 500
+ */
 const Router = require('../../koa-router');
 const multer = require('../multer');
 const { getRequestBody } = require('../../request-body');
@@ -14,7 +19,7 @@ router.post('/mini-program/active-info', async (ctx) => {
     doc = await ctx.db.ActiveInfoModel.findOne({ about: { $type: 4 } });
     ctx.body = { data: doc || {}, code: 0, msg: 'ok' };
   } catch (error) {
-    ctx.body = { data: null, code: 9999, msg: '数据库操作失败' };
+    ctx.body = { data: null, code: 4999, msg: '数据库操作失败' };
   }
 });
 // 修改活动信息
@@ -38,7 +43,7 @@ router.post('/mini-program/update/active-info', async (ctx) => {
     await ctx.db.ActiveInfoModel.updateOne({ _id: body._id }, { $set: body });
     ctx.body = { data: true, code: 0, msg: 'ok' };
   } catch (error) {
-    ctx.body = { data: null, code: 9999, msg: '数据库操作失败' };
+    ctx.body = { data: null, code: 4999, msg: '数据库操作失败' };
   }
 });
 // 删除活动信息
@@ -62,7 +67,7 @@ router.post('/mini-program/delete/active-info', async (ctx) => {
     await ctx.db.ActiveInfoModel.deleteOne({ _id: body._id });
     ctx.body = { data: true, code: 0, msg: 'ok' };
   } catch (error) {
-    ctx.body = { data: null, code: 9999, msg: '数据库操作失败' };
+    ctx.body = { data: null, code: 4999, msg: '数据库操作失败' };
   }
 });
 // 创建活动信息
@@ -83,7 +88,7 @@ router.post('/mini-program/create/active-info', async (ctx) => {
     await model.save();
     ctx.body = { data: true, code: 0, msg: 'ok' };
   } catch (error) {
-    ctx.body = { data: null, code: 9999, msg: '数据库操作失败' };
+    ctx.body = { data: null, code: 4999, msg: '数据库操作失败' };
   }
 });
 
@@ -113,7 +118,7 @@ router.post('/mini-program/syllabus', async (ctx) => {
     doc = await ctx.db.CourseModel.findOne({ $or: [{ course: body.course }, { _id: body._id }] });
     ctx.body = { data: doc || {}, code: 0, msg: 'ok' };
   } catch (error) {
-    ctx.body = { data: null, code: 9999, msg: '数据库操作失败' };
+    ctx.body = { data: null, code: 4999, msg: '数据库操作失败' };
   }
 });
 // 修改课程大纲
@@ -139,7 +144,7 @@ router.post('/mini-program/update/syllabus', async (ctx) => {
     await ctx.db.CourseModel.updateOne({ $or: [{ _id: body._id }, { course: body.course }] }, { $set: body });
     ctx.body = { data: true, code: 0, msg: 'ok' };
   } catch (error) {
-    ctx.body = { data: null, code: 9999, msg: '数据库操作失败' };
+    ctx.body = { data: null, code: 4999, msg: '数据库操作失败' };
   }
 });
 // 删除课程大纲
@@ -165,7 +170,7 @@ router.post('/mini-program/delete/syllabus', async (ctx) => {
     await ctx.db.CourseModel.deleteOne({ $or: [{ _id: body._id }, { course: body.course }] });
     ctx.body = { data: true, code: 0, msg: 'ok' };
   } catch (error) {
-    ctx.body = { data: null, code: 9999, msg: '数据库操作失败' };
+    ctx.body = { data: null, code: 4999, msg: '数据库操作失败' };
   }
 });
 // 新增课程大纲
@@ -189,7 +194,7 @@ router.post('/mini-program/create/syllabus', async (ctx) => {
     await model.save();
     ctx.body = { data: true, code: 0, msg: 'ok' };
   } catch (error) {
-    ctx.body = { data: null, code: 9999, msg: '数据库操作失败' };
+    ctx.body = { data: null, code: 4999, msg: '数据库操作失败' };
   }
 });
 

@@ -34,7 +34,27 @@ function isEmpty(data) {
   if (isSet(data) || isMap(data)) return data.size <= 0;
   return false;
 }
-
+// 返回 true 表示验证通过，否则验证失败并返回失败信息。
+function paramsValidate(query, schema) {
+  const body = query || {};
+  const keys = Object.keys(schema);
+  for (let i = 0; i < keys.length; i++) {
+    const key = keys[i];
+    // isRequired 表示参数是否比传
+    // type 表示参数类型
+    const { isRequired, type } = schema[key];
+    const data = body[key];
+    if (isRequired) {
+      if (!data) return { data: null, code: 9999, msg: `参数${key}不能为空` };
+      // eslint-disable-next-line
+      if (typeof data !== type) return { data: null, code: 9999, msg: `参数${key}类型错误` };
+    } else {
+      // eslint-disable-next-line
+      if (data && typeof data !== type) return { data: null, code: 9999, msg: `参数${key}类型错误` };
+    }
+  }
+  return true;
+}
 module.exports = {
   getType,
   isArray,
@@ -42,4 +62,5 @@ module.exports = {
   isMap,
   isPlainObject,
   isEmpty,
+  paramsValidate,
 };

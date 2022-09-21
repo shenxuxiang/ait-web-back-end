@@ -47,11 +47,11 @@
   "characteristic": [
     {
       "subtitle": "严格把控招生门槛",
-      "context": "大学本科及以上学历，毕业不超过3年。性格活泼开朗，有上进心。"
+      "context": "专科及以上学历，毕业不超过3年。性格活泼开朗，有上进心。"
     },
     {
-      "subtitle": "免费试学、重修",
-      "context": "免费试学一个月，试学期间不满意随时退费。offer 不满意，可申请免费重修。"
+      "subtitle": "免费试学，满意再报名",
+      "context": "免费试学一个月，试学期间不收取任何费用。试学结束后凭个人意愿报名继续学习。"
     },
     {
       "subtitle": "高强度学习、培训周期长",
@@ -135,8 +135,8 @@
     "introduce": "资深前端开发工程师，7年工作经验，先后就职于趣头条、虎扑体育、上海微盟。"
   },
   "turnOffCountdown": false,
-  "signUpCutOffTime": 1664553599000,
-  "friendlyTips": "艾特前端课堂一期招收30名学员，只需4999元。名额有限赶紧报名吧",
+  "signUpCutOffTime": 1665417599000,
+  "friendlyTips": "艾特前端课堂秋季班只招收30名学员。名额有限赶紧报名吧",
   "shareInfo": {
     "title": "艾特前端课堂",
     "imageUrl": "https://aitweb.cn/mini-program/images/wx-share.jpeg",
@@ -146,5 +146,5 @@
     "phoneNumber": "18226707203",
     "qrcode": "https://aitweb.cn/mini-program/images/qrcode.jpeg"
   },
-  "_id":"62fc3aad1c5c27b71e3ba83c"
+  "_id": "62fc3aad1c5c27b71e3ba83c"
 }
